@@ -14,7 +14,11 @@ Rails.application.routes.draw do
   # Example resource route (maps HTTP verbs to controller actions automatically):
   #   resources :products
 
-  resources :vines, only: :index, defaults: { format: :json }
+  resources :vines, only: :feed do
+    collection do
+      get :feed
+    end
+  end
   # Example resource route with options:
   #   resources :products do
   #     member do
