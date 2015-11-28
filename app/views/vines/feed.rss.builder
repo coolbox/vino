@@ -11,12 +11,12 @@ xml.rss version: "2.0" do
 
     for video in @vines
       xml.item do
-        xml.title "#{video.description} - #{video.username}"
+        xml.title video.description
         xml.author video.username
         xml.pubDate video.created
         xml.link video.permalinkUrl
         xml.guid video.permalinkUrl.split("/").last
-        xml.description video.description
+        xml.description "#{video.description} - #{video.username}"
       end
     end
   end
