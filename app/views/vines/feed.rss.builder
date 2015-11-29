@@ -11,7 +11,7 @@ xml.rss version: "2.0" do
 
     for video in @vines
       xml.item do
-        xml.title video.description
+        xml.title feed_title(video)
         xml.author video.username
         xml.pubDate video.created
         xml.link video.permalinkUrl
