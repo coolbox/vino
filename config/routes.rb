@@ -17,6 +17,7 @@ Rails.application.routes.draw do
   resources :vines, only: :feed do
     collection do
       get :feed
+      get :search
     end
   end
   # Example resource route with options:
