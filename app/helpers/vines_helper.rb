@@ -1,9 +1,8 @@
 module VinesHelper
   def feed_title(video)
-    if video.loops.onFire == 1
-      "#{video.description} #mustwatch"
-    else
-      video.description
-    end
+    title = video.description
+    title += " #mustwatch " if video.loops.onFire == 1
+    title = title.strip
+    return title
   end
 end
