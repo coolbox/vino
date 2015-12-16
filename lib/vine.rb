@@ -6,7 +6,7 @@ module Vine
 
     def self.high_velocity(page = 0)
       popular(page).reject do |vine|
-        vine.loops.velocity < 6 && vine.loops.onFire == 0
+        vine.loops.velocity < 7 && vine.loops.onFire == 0
       end
     end
 
@@ -17,7 +17,7 @@ module Vine
         current_search = client.search(search)
       end
       current_search.reject do |vine|
-        vine.loops[:count] < 1000 && vine.loops.onFire == 0
+        vine.loops[:count] < 1500 && vine.loops.onFire == 0
       end
     end
 
